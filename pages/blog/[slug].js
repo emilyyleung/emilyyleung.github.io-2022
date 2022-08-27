@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Link from 'next/link';
 import CustomLink from 'components/UI/CustomLink';
-import Layout from 'components/UI/Layout';
+import BlogLayout from 'components/UI/BlogLayout';
 import { postFilePaths, POSTS_PATH } from 'utils/mdxUtils';
 
 const TestComponent = dynamic(() => import('components/UI/TestComponent'));
@@ -37,7 +37,7 @@ export default function PostPage({ source, frontMatter }) {
         <meta name="description" content={frontMatter.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout meta={frontMatter}>
+      <BlogLayout meta={frontMatter}>
         <div>
           <nav>
             <Link href="/blog">
@@ -54,7 +54,7 @@ export default function PostPage({ source, frontMatter }) {
         <main>
           <MDXRemote {...source} components={components} />
         </main>
-      </Layout>
+      </BlogLayout>
     </>
   );
 }

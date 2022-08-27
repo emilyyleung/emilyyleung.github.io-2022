@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import GithubLogo from 'components/logos/github.jsx';
 import InstagramLogo from 'components/logos/instagram.jsx';
 import LinkedinLogo from 'components/logos/linkedin.jsx';
@@ -82,6 +83,9 @@ export default function HomePage() {
           >
             Bragdoc
           </a>
+          <Link rel="noreferrer" href="/blog">
+            <a className="underline hover:text-orange-400">Blog</a>
+          </Link>
         </div>
       </div>
     </div>
