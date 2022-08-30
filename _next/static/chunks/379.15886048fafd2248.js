@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[379],{2379:function(a,b,c){c.r(b);var d=c(5893),e=function(){return(0,d.jsx)(d.Fragment,{children:(0,d.jsx)("div",{className:"text-red-500",children:"TESTING"})})};b.default=e}}])
