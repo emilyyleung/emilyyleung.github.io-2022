@@ -7,13 +7,13 @@ import { serialize } from 'next-mdx-remote/serialize';
 // Frontend imports
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import Link from 'next/link';
-import CustomLink from 'components/UI/CustomLink';
-import BlogLayout from 'components/UI/BlogLayout';
 import { postFilePaths, POSTS_PATH } from 'utils/mdxUtils';
 
+// Custom Components
+import CustomLink from 'components/UI/CustomLink';
+import BlogLayout from 'components/UI/BlogLayout';
+
 const TestComponent = dynamic(() => import('components/UI/TestComponent'));
-const Test = dynamic(() => import('components/UI/Test'));
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -25,7 +25,6 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   TestComponent,
-  Test,
   Head,
 };
 
@@ -38,19 +37,6 @@ export default function PostPage({ source, frontMatter }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BlogLayout meta={frontMatter}>
-        <div>
-          <nav>
-            <Link href="/blog">
-              <a>👈 Go back home</a>
-            </Link>
-          </nav>
-        </div>
-        <div className="post-header">
-          <h1>{frontMatter.title}</h1>
-          {frontMatter.description && (
-            <p className="description">{frontMatter.description}</p>
-          )}
-        </div>
         <main>
           <MDXRemote {...source} components={components} />
         </main>

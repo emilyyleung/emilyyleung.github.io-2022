@@ -24,7 +24,11 @@ export default function Index({ posts }) {
         <meta name="description" content="Emily Y Leung Blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BlogList meta={{ title: 'Blog Posts' }}>
+      <BlogList
+        meta={{
+          title: 'Blog',
+        }}
+      >
         <ul>
           {posts.map((post) => (
             <li key={post.filePath}>
@@ -32,11 +36,15 @@ export default function Index({ posts }) {
                 as={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/blog/[slug]`}
               >
-                <a className="no-underline hover:text-orange-400">
-                  {post.data.title}{' '}
-                  <span className="text-slate-400">
-                    / {simpleDate(post.data.date)}
-                  </span>
+                <a className="no-underline hover:text-orange-400 text-lg">
+                  <div className="grid grid-cols-[1fr_auto] gap-1">
+                    <div>{post.data.title} </div>
+                    <div className="justify-self-end">
+                      <span className="text-slate-400">
+                        {simpleDate(post.data.date)}
+                      </span>
+                    </div>
+                  </div>
                 </a>
               </Link>
             </li>

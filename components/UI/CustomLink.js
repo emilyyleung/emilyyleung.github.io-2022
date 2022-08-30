@@ -7,8 +7,8 @@ export default function CustomLink({ as, href, ...otherProps }) {
         <a {...otherProps} />
       </Link>
       <style jsx>{`
-        a {
-          color: tomato;
+        a:hover {
+          color: rgb(251 146 60);
         }
       `}</style>
     </>
