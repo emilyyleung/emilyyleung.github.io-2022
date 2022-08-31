@@ -11,7 +11,7 @@ import { postFilePaths, POSTS_PATH } from 'utils/mdxUtils';
 
 // Custom Components
 import CustomLink from 'components/UI/CustomLink';
-import BlogLayout from 'components/UI/BlogLayout';
+import BlogDetail from 'components/UI/BlogDetail';
 
 const TestComponent = dynamic(() => import('components/UI/TestComponent'));
 
@@ -36,11 +36,11 @@ export default function PostPage({ source, frontMatter }) {
         <meta name="description" content={frontMatter.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BlogLayout meta={frontMatter}>
+      <BlogDetail meta={frontMatter}>
         <main>
           <MDXRemote {...source} components={components} />
         </main>
-      </BlogLayout>
+      </BlogDetail>
     </>
   );
 }
