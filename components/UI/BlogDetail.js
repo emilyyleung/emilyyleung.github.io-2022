@@ -24,7 +24,7 @@ export default function BlogDetail({ children, meta, maxWidth = 'max-w-3xl' }) {
             <h1 className="m-0 lg:text-6xl text-5xl font-extrabold text-slate-900">
               {meta.title}
             </h1>
-            {meta.date && <p className="description">{meta.date}</p>}
+            {meta.date && <p>{meta.date}</p>}
             <hr />
           </div>
           {children}
